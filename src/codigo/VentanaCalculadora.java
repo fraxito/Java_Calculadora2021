@@ -157,6 +157,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         botonIgual.setForeground(new java.awt.Color(255, 255, 255));
         botonIgual.setText("=");
         botonIgual.setOpaque(false);
+        botonIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIgualActionPerformed(evt);
+            }
+        });
 
         boton9.setBackground(new java.awt.Color(153, 153, 153));
         boton9.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
@@ -345,6 +350,25 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
         operacionPulsada("+");
     }//GEN-LAST:event_botonSumaActionPerformed
+
+    private void botonIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIgualActionPerformed
+        //el botón igual tiene que saber qué operación se pulsó
+        //como ese valor lo guardé en la variable operacion, 
+        //monto un if para que dependiendo de ese valor se realice
+        //la operación correspondiente
+        
+        //primero guardo lo que haya en la pantalla en una variable double
+        double operando2 = Double.valueOf(display.getText());
+        
+        //si la operación era la suma:
+        if (operacion.equals("+")){
+            operando1 = operando1 + operando2;
+        }
+        
+        
+        //por último, muestro el resultado por pantalla
+        display.setText( String.valueOf(operando1) );
+    }//GEN-LAST:event_botonIgualActionPerformed
 
     /**
      * @param args the command line arguments
