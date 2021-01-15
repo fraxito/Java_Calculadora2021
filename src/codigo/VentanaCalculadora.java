@@ -32,6 +32,17 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         }
     }
 
+    //la función que se encarga de trabajar con la operación pulsada
+    public void operacionPulsada(String _operacion){
+        //guardo el valor de la pantalla en la variable operando1
+        operando1 = Double.valueOf(display.getText());
+        
+        //pongo a cero la pantalla
+        display.setText("0");
+        
+        //guardo la operación que he pulsado
+        operacion = _operacion;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -185,6 +196,11 @@ public class VentanaCalculadora extends javax.swing.JFrame {
         botonSuma.setForeground(new java.awt.Color(255, 255, 255));
         botonSuma.setText("+");
         botonSuma.setOpaque(false);
+        botonSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSumaActionPerformed(evt);
+            }
+        });
 
         botonResta.setBackground(new java.awt.Color(153, 153, 153));
         botonResta.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
@@ -325,6 +341,10 @@ public class VentanaCalculadora extends javax.swing.JFrame {
     private void boton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton9ActionPerformed
         escribeNumeroEnPantalla("9");
     }//GEN-LAST:event_boton9ActionPerformed
+
+    private void botonSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSumaActionPerformed
+        operacionPulsada("+");
+    }//GEN-LAST:event_botonSumaActionPerformed
 
     /**
      * @param args the command line arguments

@@ -345,6 +345,9 @@
         <Property name="text" type="java.lang.String" value="+"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSumaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botonResta">
       <Properties>
